@@ -128,6 +128,7 @@ function ListBox() {
 
 function MovieList() {
   const [movies, setMovies] = useState(tempMovieData);
+  console.log(setMovies);
 
   return (
     <ul className="list">
@@ -153,6 +154,7 @@ function Movie({ movie }) {
 
 function WatchedBox() {
   const [watched, setWatched] = useState(tempWatchedData);
+  console.log(setWatched);
   const [isOpen2, setIsOpen2] = useState(true);
 
   return (
