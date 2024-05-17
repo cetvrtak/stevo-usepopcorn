@@ -2,48 +2,48 @@ import { useState } from "react";
 
 const tempMovieData = [
   {
-    imdbID: "tt1375666",
-    Title: "Inception",
-    Year: "2010",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-  },
-  {
-    imdbID: "tt0133093",
-    Title: "The Matrix",
+    imdbID: "tt0137523",
+    Title: "Fight Club",
     Year: "1999",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
   },
   {
-    imdbID: "tt6751668",
-    Title: "Parasite",
-    Year: "2019",
+    imdbID: "tt1446714",
+    Title: "Prometheus",
+    Year: "2012",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
+  },
+  {
+    imdbID: "tt0278781",
+    Title: "Andromeda Nebula",
+    Year: "1967",
+    Poster:
+      "https://m.media-amazon.com/images/I/515COd2Y0QL._SX466_@._V1_SX300.jpg",
   },
 ];
 
 const tempWatchedData = [
   {
-    imdbID: "tt1375666",
-    Title: "Inception",
-    Year: "2010",
+    imdbID: "tt0137523",
+    Title: "Fight Club",
+    Year: "1999",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-    runtime: 148,
+      "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
+    runtime: 239,
     imdbRating: 8.8,
     userRating: 10,
   },
   {
-    imdbID: "tt0088763",
-    Title: "Back to the Future",
-    Year: "1985",
+    imdbID: "tt1446714",
+    Title: "Prometheus",
+    Year: "2012",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-    runtime: 116,
-    imdbRating: 8.5,
-    userRating: 9,
+      "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
+    runtime: 224,
+    imdbRating: 7.0,
+    userRating: 10,
   },
 ];
 
