@@ -1,51 +1,51 @@
 import { useEffect, useState } from "react";
 
-const tempMovieData = [
-  {
-    imdbID: "tt0137523",
-    Title: "Fight Club",
-    Year: "1999",
-    Poster:
-      "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
-  },
-  {
-    imdbID: "tt1446714",
-    Title: "Prometheus",
-    Year: "2012",
-    Poster:
-      "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
-  },
-  {
-    imdbID: "tt0278781",
-    Title: "Andromeda Nebula",
-    Year: "1967",
-    Poster:
-      "https://m.media-amazon.com/images/I/515COd2Y0QL._SX466_@._V1_SX300.jpg",
-  },
-];
+// const tempMovieData = [
+// {
+//   imdbID: "tt0137523",
+//   Title: "Fight Club",
+//   Year: "1999",
+//   Poster:
+//     "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
+// },
+// {
+//   imdbID: "tt1446714",
+//   Title: "Prometheus",
+//   Year: "2012",
+//   Poster:
+//     "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
+// },
+// {
+//   imdbID: "tt0278781",
+//   Title: "Andromeda Nebula",
+//   Year: "1967",
+//   Poster:
+//     "https://m.media-amazon.com/images/I/515COd2Y0QL._SX466_@._V1_SX300.jpg",
+// },
+// ];
 
-const tempWatchedData = [
-  {
-    imdbID: "tt0137523",
-    Title: "Fight Club",
-    Year: "1999",
-    Poster:
-      "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
-    runtime: 239,
-    imdbRating: 8.8,
-    userRating: 10,
-  },
-  {
-    imdbID: "tt1446714",
-    Title: "Prometheus",
-    Year: "2012",
-    Poster:
-      "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
-    runtime: 224,
-    imdbRating: 7.0,
-    userRating: 10,
-  },
-];
+// const tempWatchedData = [
+// {
+//   imdbID: "tt0137523",
+//   Title: "Fight Club",
+//   Year: "1999",
+//   Poster:
+//     "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
+//   runtime: 239,
+//   imdbRating: 8.8,
+//   userRating: 10,
+// },
+// {
+//   imdbID: "tt1446714",
+//   Title: "Prometheus",
+//   Year: "2012",
+//   Poster:
+//     "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
+//   runtime: 224,
+//   imdbRating: 7.0,
+//   userRating: 10,
+// },
+// ];
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -55,6 +55,7 @@ const KEY = '60619ec4'
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
+  console.log(setWatched);
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
