@@ -3,53 +3,6 @@ import StarRating from './StarRating'
 import { useMovies } from "./useMovies";
 import { useLocalStorageState } from "./useLocalStorageState";
 
-// const tempMovieData = [
-// {
-//   imdbID: "tt0137523",
-//   Title: "Fight Club",
-//   Year: "1999",
-//   Poster:
-//     "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
-// },
-// {
-//   imdbID: "tt1446714",
-//   Title: "Prometheus",
-//   Year: "2012",
-//   Poster:
-//     "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
-// },
-// {
-//   imdbID: "tt0278781",
-//   Title: "Andromeda Nebula",
-//   Year: "1967",
-//   Poster:
-//     "https://m.media-amazon.com/images/I/515COd2Y0QL._SX466_@._V1_SX300.jpg",
-// },
-// ];
-
-// const tempWatchedData = [
-// {
-//   imdbID: "tt0137523",
-//   Title: "Fight Club",
-//   Year: "1999",
-//   Poster:
-//     "https://m.media-amazon.com/images/I/71L0N7Ql0iL._AC_SY879_@._V1_SX300.jpg",
-//   runtime: 239,
-//   imdbRating: 8.8,
-//   userRating: 10,
-// },
-// {
-//   imdbID: "tt1446714",
-//   Title: "Prometheus",
-//   Year: "2012",
-//   Poster:
-//     "https://m.media-amazon.com/images/I/81Xk9a-6QEL.__AC_SX300_SY300_QL70_ML2_@._V1_SX300.jpg",
-//   runtime: 224,
-//   imdbRating: 7.0,
-//   userRating: 10,
-// },
-// ];
-
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
@@ -210,32 +163,6 @@ function Box({ children, element }) {
     </div>
   )
 }
-
-/*
-  function WatchedBox() {
-  const [watched, setWatched] = useState(tempWatchedData);
-  console.log(setWatched);
-  const [isOpen2, setIsOpen2] = useState(true);
-
-  return (
-    <div className="box">
-      <button
-        className="btn-toggle"
-        onClick={() => setIsOpen2((open) => !open)}
-      >
-        {isOpen2 ? "–" : "+"}
-      </button>
-
-      {isOpen2 && (
-        <>
-          <WatchedSummary watched={watched} />
-          <WatchedMoviesList watched={watched} />
-        </>
-      )}
-    </div>
-  )
-}
-*/
 
 function MovieList({ movies, onSelectMovie }) {
   return (
