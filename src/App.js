@@ -44,10 +44,19 @@ export default function App() {
 
         <Box>
           {isLoading && <Loader />}
-          {!isLoading && !error && (
+          {!isLoading && !error && movies.length > 0 && (
             <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
           )}
-          {error && <ErrorMessage message={error} />}
+          {!isLoading && !error && movies.length === 0 && (
+            <Notification>
+              <span>🍿</span> Search movies
+            </Notification>
+          )}
+          {error && (
+            <Notification>
+              <span>❌</span> {error}
+            </Notification>
+          )}
         </Box>
 
         <Box>
@@ -73,9 +82,9 @@ export default function App() {
   );
 }
 
-function ErrorMessage({ message }) {
+function Notification({ children }) {
   return <p className="error">
-    <span>🍿</span> {message}
+    {children}
   </p>
 }
 
