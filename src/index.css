@@ -387,7 +387,7 @@ FONT SIZE SYSTEM (px)
   }
 
   .search {
-    max-width: 34rem;
+    max-width: 30rem;
   }
 
   /* MAIN */
@@ -400,5 +400,20 @@ FONT SIZE SYSTEM (px)
     width: 100%;
     max-width: none;
     min-height: 4rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav-bar {
+    gap: 1.2rem;
+  }
+
+  .search {
+    order: 2;
+    max-width: none;
+  }
+
+  .logo h1 {
+    display: initial;
   }
 }
