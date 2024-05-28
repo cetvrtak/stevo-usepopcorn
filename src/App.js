@@ -232,9 +232,9 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   //   setIsTop(imdbRating > 8)
   // }, [imdbRating])
 
-  const isTop = imdbRating > 8
+  // const isTop = imdbRating > 8
 
-  const [avgRating, setAvgRating] = useState(0)
+  // const [avgRating, setAvgRating] = useState(0)
 
   function handleAdd() {
     const newWatchedMovie = {
