@@ -37,7 +37,7 @@ export function useMovies(query) {
 			}
 		}
 
-		if (query.length < 5) {
+		if (query.length < 3) {
 			setMovies([])
 			setError('')
 			return
