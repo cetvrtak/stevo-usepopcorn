@@ -118,7 +118,6 @@ function Search({ query, setQuery }) {
       if (document.activeElement === inputEl.current) return
 
       if (e.code === 'Enter') {
-        console.log(inputEl.current);
         inputEl.current.focus()
         setQuery('')
       }
@@ -176,20 +175,20 @@ function Box({ children, element }) {
 function MovieList({ movies, onSelectMovie }) {
   return (
     <ul className="list list-movies">
-      {movies?.map((movie) => <Movie movie={movie} key={movie.imdbID} onSelectMovie={onSelectMovie} />)}
+      {movies?.map((movie) => <Movie movie={movie} key={movie.id} onSelectMovie={onSelectMovie} />)}
     </ul>
   )
 }
 
 function Movie({ movie, onSelectMovie }) {
   return (
-    <li onClick={() => onSelectMovie(movie.imdbID)}>
-      <img src={movie.Poster} alt={`${movie.Title} poster`} />
-      <h3>{movie.Title}</h3>
+    <li onClick={() => onSelectMovie(movie.id)}>
+      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={`${movie.title} poster`} />
+      <h3>{movie.title}</h3>
       <div>
         <p>
           <span>🗓</span>
-          <span>{movie.Year}</span>
+          <span>{movie.release_date.split('-').at(0)}</span>
         </p>
       </div>
     </li>
@@ -258,8 +257,24 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     function () {
       async function getMovieDetails() {
         setIsLoading(true);
+
+        const options = {
+          method: 'GET',
+          headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YzQwMmMwZGMzOTQ4YzlmNTkzYzVhZDBhZGNhZjMxNyIsInN1YiI6IjY2NmFlNjFjYWM2ZWZlZDM2ZWE3OTllZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.64dtcXt1EhtoWTkLwbJpvSZ7PvoNjJ2g4nYR6SRZ728'
+          }
+        };
+
+        const tmdbRes = await fetch(
+          `https://api.themoviedb.org/3/movie/${selectedId}?language=en-US`,
+          options
+        );
+        const tmdbData = await tmdbRes.json();
+        const imdbID = tmdbData.imdb_id
+
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
+          `https://www.omdbapi.com/?apikey=${KEY}&i=${imdbID}`
         );
         const data = await res.json();
         setMovie(data);

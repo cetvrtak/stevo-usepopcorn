@@ -10,7 +10,5 @@ export function useLocalStorageState(initialState, key) {
 		localStorage.setItem(key, JSON.stringify(value))
 	}, [value, key])
 
-	console.log(value, key);
-
 	return [value, setValue]
 }

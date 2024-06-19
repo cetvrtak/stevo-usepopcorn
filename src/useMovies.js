@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const KEY = '60619ec4'
+const KEY = '5c402c0dc3948c9f593c5ad0adcaf317'
 
 export function useMovies(query) {
 	const [movies, setMovies] = useState([]);
@@ -17,16 +17,16 @@ export function useMovies(query) {
 				setIsLoading(true)
 				setError('')
 
-				const res = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&s=${query}`, { signal: controller.signal })
+				const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${KEY}`, { signal: controller.signal })
 
 				if (!res.ok) throw new Error("Failed to fetch movies")
 
 				const data = await res.json()
-				if (data.Response === 'False') {
-					throw new Error(data.Error)
+				if (data.results.length === 0) {
+					throw new Error('No results')
 				}
 
-				setMovies(data.Search)
+				setMovies(data.results)
 				setError('')
 			} catch (err) {
 				if (err.name !== 'AbortError') {
